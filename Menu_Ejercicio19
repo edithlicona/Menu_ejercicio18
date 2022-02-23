@@ -1,0 +1,104 @@
+// Plantilla de un Menú de Opciones
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TRUE 1
+#define FALSE 0
+
+int main()
+{
+    int opcion;
+    char repetir = TRUE;
+    
+    do {
+        system("cls");
+        
+        // Texto del menú
+        printf("\n\n\t\t\tMenu de Opciones\n");
+        printf("\t\t\t----------------\n");
+        printf("\n\t1. Sumar dos numeros\n");
+        printf("\t2. Restar dos numeros\n");
+        printf("\t3. Multiplicar dos numeros\n");
+        printf("\t4. Dividir dos numeros\n");
+        printf("\t0. SALIR\n");
+        
+        printf("\n\tIngrese una opcion: ");
+        scanf("%d", &opcion);
+        
+        int numero1, numero2;
+		float resultado;
+        switch (opcion) {
+            case 1:
+                // Instrucciones para sumar dos números
+                printf("\n\tIngrese primer numero: ");
+                scanf("%d", &numero1);
+                
+                printf("\tIngrese segundo numero: ");
+                scanf("%d", &numero2);
+                
+                printf("\t---------------------------\n");
+                resultado = numero1 + numero2;
+                printf("\tResultado: %f\n", resultado);
+                
+                system("pause>nul");
+                break;
+                
+            case 2:
+                // Instrucciones para restar dos números
+                printf("\n\tIngrese primer numero: ");
+                scanf("%d", &numero1);
+                
+                printf("\tIngrese segundo numero: ");
+                scanf("%d", &numero2);
+                
+                printf("\t---------------------------\n");
+                resultado = numero1 - numero2;
+                printf("\tResultado: %f\n", resultado);
+                
+                system("pause>nul");
+                break;
+                
+            case 3:
+                // Instrucciones para multiplicar dos números
+                printf("\n\tIngrese primer numero: ");
+                scanf("%d", &numero1);
+                
+                printf("\tIngrese segundo numero: ");
+                scanf("%d", &numero2);
+                
+                printf("\t---------------------------\n");
+                resultado = numero1 * numero2;
+                printf("\tResultado: %f\n", resultado);
+                
+                system("pause>nul");
+                break;
+                
+			case 4:
+                // Instrucciones para dividir dos números
+                printf("\n\tIngrese primer numero: ");
+                scanf("%d", &numero1);
+                
+                printf("\tIngrese segundo numero: ");
+                scanf("%d", &numero2);
+                
+                printf("\t---------------------------\n");
+                
+				if (numero2 == 0) {
+                	printf("\tResultado: No se puede dividir por cero.\n"); 
+				} else {
+					resultado = numero1 / (numero2 * 1.0);
+					printf("\tResultado: %f\n", resultado);
+				}
+                
+                system("pause>nul");     
+                break;
+            
+            case 0:
+            	repetir = FALSE;
+            	break;
+        }        
+    } while (repetir);
+	 
+    return 0;
+}
